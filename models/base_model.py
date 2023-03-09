@@ -7,7 +7,7 @@ import models
 class BaseModel:
     """Base class"""
 
-    def __init__(self, *args, *kwargs):
+    def __init__(self, *args, **kwargs):
         """Initializes arguments for class BaseModel
         Args:
             id - identification number
