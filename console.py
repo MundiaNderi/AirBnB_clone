@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
             instance = eval(args[0])()
             instance.save()
             print(instance.id)
-        except:
+        except Exception:
             print("** class doesn't exist **")
             return
 
@@ -91,8 +91,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
                 return
         elif len(args) == 1:
-                print("** instance id missing **")
-                return
+            print("** instance id missing **")
+            return
 
     def do_destroy(self, line):
         """Deletes an instance based on the class name and id
