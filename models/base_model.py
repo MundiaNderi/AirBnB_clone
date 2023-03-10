@@ -4,6 +4,7 @@ import uuid
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """Base class"""
 
@@ -15,12 +16,12 @@ class BaseModel:
             **kwargs - dictionary arguments
         """
 
-        if kwargs and  kwargs != {}:
+        if kwargs and kwargs != {}:
             for k, v in kwargs.items():
                 if k == "created_at" or k == "updated_at":
                     seattr(self, k, datetime.strptime(v,
                                                       "%Y-%m-%dT%H:%M:%S.%F"))
-                elif k == "__class__"
+                elif k == "__class__":
                     continue
                 else:
                     seattr(self, k, v)
@@ -37,6 +38,7 @@ class BaseModel:
 
         return ("[{}] ({}) {}".format(self.__class__.name__,
                                       self.id, self.__dict__))
+
     def save(self):
         """Saves any new information added to a class instance and
         saves an update time
