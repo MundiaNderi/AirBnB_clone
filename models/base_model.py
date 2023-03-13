@@ -19,12 +19,12 @@ class BaseModel:
         if kwargs and kwargs != {}:
             for k, v in kwargs.items():
                 if k == "created_at" or k == "updated_at":
-                    seattr(self, k, datetime.strptime(v,
-                                                      "%Y-%m-%dT%H:%M:%S.%F"))
+                    setattr(self, k, datetime.strptime(v,
+                                                      "%Y-%m-%dT%H:%M:%S.%f"))
                 elif k == "__class__":
                     continue
                 else:
-                    seattr(self, k, v)
+                    setattr(self, k, v)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -50,8 +50,8 @@ class BaseModel:
     def to_dict(self):
         """Returns a dictionary of all the contents of a class instance"""
 
-    d = self.__dict__.copy()
-    d['__class__'] = self.__class__.__name__
-    d['created_at'] = self.creaated_at.isoformat()
-    d['updated_at'] = self.updated_at.isoformat()
-    return d
+        d = self.__dict__.copy()
+        d['__class__'] = self.__class__.__name__
+        d['created_at'] = self.created_at.isoformat()
+        d['updated_at'] = self.updated_at.isoformat()
+        return d

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Holds User class that inherits from BaseModel"""
-from models.bade_model import BaseModel
+from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):

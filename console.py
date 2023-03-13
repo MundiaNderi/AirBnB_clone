@@ -73,7 +73,7 @@ class HBNBCommand(cmd.Cmd):
             line - user input
         """
 
-        if not line or line is "":
+        if not line or line == "":
             print('** class name missing **')
             return
         args = line.split()

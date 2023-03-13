@@ -2,7 +2,7 @@
 """Holds User class that inherits from BaseModel"""
 from models.base_model import BaseModel
 
-class Place(BaseModel)
+class Place(BaseModel):
     """ Initializes the Place class
     Attributes:
         city_id (str) - refers to the City.id
@@ -15,7 +15,7 @@ class Place(BaseModel)
         price_by_night (int) - The cost of a night
         latitude (float) - the latitude location of the place
         longitude (float) - the longitude location of the place
-        amenity_ids - (list of str)
+        amenity_ids - (list of str) - List of Amenity.id
     """
 
     city_id = ""
@@ -28,4 +28,4 @@ class Place(BaseModel)
     price_by_night = 0
     latitude = 0.0
     longitude = 0.0
-    amenity.ids = []
+    amenity_ids = []
