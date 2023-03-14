@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Unittest for BaseModel class"""
-import unittest
+
+from datetime import datetime
 from models.base_model import BaseModel
 from datetime import datetime
 from time import sleep
-import os
+import unittest
 
 
 class TestBaseModel(unittest.TestCase):
