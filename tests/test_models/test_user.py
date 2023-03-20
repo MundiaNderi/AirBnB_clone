@@ -86,7 +86,7 @@ class TestUser(unittest.TestCase):
         """Makes sure updated_at updates"""
 
         tmp = self.a.updated_at
-        self.a.save()
+        self.a.save(name)
         self.assertNotEqual(tmp, self.a.updated_at)
 
     def test_consistent_idLength(self):

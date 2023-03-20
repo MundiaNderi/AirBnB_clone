@@ -39,12 +39,13 @@ class BaseModel:
         return ("[{}] ({}) {}".format(self.__class__.name__,
                                       self.id, self.__dict__))
 
-    def save(self):
+    def save(self, name):
         """Saves any new information added to a class instance and
         saves an update time
         """
 
         self.updated_at = datetime.now()
+        self.name = name
         models.storage.save()
 
     def to_dict(self):

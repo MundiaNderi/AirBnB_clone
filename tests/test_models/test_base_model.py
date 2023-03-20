@@ -71,7 +71,7 @@ class TestBaseModel(unittest.TestCase):
         """Makes sure updated_at updates"""
 
         tmp = self.b1.updated_at
-        self.b1.save()
+        self.b1.save(name)
         self.assertNotEqual(tmp, self.b1.updated_at)
 
     def test_id_length(self):
@@ -179,7 +179,7 @@ class TestBaseModel(unittest.TestCase):
         """Tests that info is saved to file"""
 
         b3 = BaseModel()
-        b3.save()
+        b3.save(name)
         with open("file.json", "r") as f:
             self.assertIn(b3.id, f.read())
 
